@@ -1,0 +1,166 @@
+/* accessories.module.css */
+
+/* ── Page header ─────────────────────────────────────────────────────────── */
+.header {
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  padding: 4rem 2rem 3rem;
+  border-bottom: 2px solid #c9a84c;
+}
+
+.headerTitle {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 400;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+}
+
+.headerSub {
+  color: #bbb;
+  font-size: 0.95rem;
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* ── Shared section layout ───────────────────────────────────────────────── */
+
+/*
+  All section styles live here (not in the component) so you can
+  tweak spacing/colors in one place.
+*/
+
+:global(.acc-section) {
+  display: flex;
+  align-items: stretch;
+  min-height: 380px;
+}
+
+:global(.acc-section.dark) {
+  background-color: #111;
+  color: #fff;
+}
+
+:global(.acc-section.light) {
+  background-color: #fff;
+  color: #111;
+}
+
+/* ── Image block ─────────────────────────────────────────────────────────── */
+:global(.acc-image) {
+  flex: 1;
+  position: relative; /* required for Next.js Image fill */
+  min-height: 320px;
+}
+
+/* ── Text / content block ────────────────────────────────────────────────── */
+:global(.acc-content) {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 4rem;
+}
+
+:global(.acc-tag) {
+  color: #c9a84c;
+  font-size: 0.75rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+:global(.acc-title) {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+:global(.acc-section.dark .acc-title) {
+  color: #fff;
+}
+:global(.acc-section.light .acc-title) {
+  color: #111;
+}
+
+:global(.acc-desc) {
+  font-size: 0.9rem;
+  line-height: 1.85;
+  max-width: 380px;
+  margin-bottom: 2rem;
+}
+
+:global(.acc-section.dark .acc-desc) {
+  color: #aaa;
+}
+:global(.acc-section.light .acc-desc) {
+  color: #555;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────────────── */
+:global(.acc-btns) {
+  display: flex;
+  gap: 0.75rem;
+}
+
+:global(.btn-filled) {
+  background-color: #c9a84c;
+  color: #111;
+  border: none;
+  padding: 0.55rem 1.5rem;
+  font-size: 0.78rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+:global(.btn-filled:hover) {
+  opacity: 0.85;
+}
+
+:global(.btn-outline-dark) {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #c9a84c;
+  padding: 0.55rem 1.5rem;
+  font-size: 0.78rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+:global(.btn-outline-dark:hover) {
+  background-color: rgba(201, 168, 76, 0.1);
+}
+
+:global(.btn-outline-light) {
+  background: transparent;
+  color: #111;
+  border: 1px solid #c9a84c;
+  padding: 0.55rem 1.5rem;
+  font-size: 0.78rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+:global(.btn-outline-light:hover) {
+  background-color: rgba(201, 168, 76, 0.1);
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  :global(.acc-section) {
+    flex-direction: column !important;
+  }
+
+  :global(.acc-image) {
+    min-height: 260px;
+  }
+
+  :global(.acc-content) {
+    padding: 2rem 1.5rem;
+  }
+}

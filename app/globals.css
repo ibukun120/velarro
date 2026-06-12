@@ -1,0 +1,392 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --background: #fcfbf8;
+  --foreground: #1f1a17;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* ==========================================================
+     PRIMARY COLORS
+     ========================================================== */
+  --color-primary-50: #fbf8f4;
+  --color-primary-100: #f2ede6;
+  --color-primary-200: #e4d8c8;
+  --color-primary-300: #d0bfa3;
+  --color-primary-400: #b79a78;
+  --color-primary-500: #8e6f52;
+
+  /* ==========================================================
+     SECONDARY COLORS
+     ========================================================== */
+  --color-secondary-50: #fbfaf8;
+  --color-secondary-100: #f3f0ea;
+  --color-secondary-200: #e6dfd3;
+  --color-secondary-300: #d2c7b6;
+  --color-secondary-400: #b8ac9a;
+  --color-secondary-500: #9c8f7d;
+  --color-secondary-600: #7e7262;
+  --color-secondary-700: #5f564b;
+  --color-secondary-800: #3f3932;
+  --color-secondary-900: #26221d;
+
+  /* ==========================================================
+     NEUTRAL COLORS
+     ========================================================== */
+  --color-neutral-1: #fcfbf8;
+  --color-neutral-2: #f6f2eb;
+  --color-neutral-3: #efe7dc;
+  --color-neutral-4: #e6d9c9;
+  --color-neutral-5: #d8c9b4;
+  --color-neutral-6: #c6b49d;
+  --color-neutral-7: #b09e87;
+  --color-neutral-8: #9a8974;
+  --color-neutral-9: #7f6f5e;
+  --color-neutral-10: #625648;
+  --color-neutral-11: #4a3f36;
+  --color-neutral-12: #2f2924;
+  --color-neutral-13: #1f1a17;
+
+  /* ==========================================================
+     WARNING
+     ========================================================== */
+  --color-warning-50: #fbf8f4;
+  --color-warning-100: #f4efe6;
+  --color-warning-200: #e8ddcc;
+  --color-warning-300: #d8c4a8;
+  --color-warning-400: #c7a987;
+  --color-warning-500: #a88a68;
+  --color-warning-600: #8a6f52;
+  --color-warning-700: #6e5741;
+  --color-warning-800: #514134;
+  --color-warning-900: #2f241c;
+
+  /* ==========================================================
+     INFO
+     ========================================================== */
+  --color-info-50: #fbfaf8;
+  --color-info-100: #f3f0ea;
+  --color-info-200: #e6ded1;
+  --color-info-300: #d2c5b0;
+  --color-info-400: #b8a88e;
+  --color-info-500: #9c8e74;
+  --color-info-600: #7e715c;
+  --color-info-700: #5f5646;
+  --color-info-800: #3f3a31;
+  --color-info-900: #26221b;
+
+  /* ==========================================================
+     SUCCESS
+     ========================================================== */
+  --color-success-50: #f6f8f4;
+  --color-success-100: #e6ebdd;
+  --color-success-200: #cbd7be;
+  --color-success-300: #aebf9b;
+  --color-success-400: #8fa379;
+  --color-success-500: #6f865a;
+  --color-success-600: #5b6f49;
+  --color-success-700: #465739;
+  --color-success-800: #333f29;
+  --color-success-900: #1f261a;
+
+  /* ==========================================================
+     ERROR
+     ========================================================== */
+  --color-error-50: #fbf5f4;
+  --color-error-100: #f2e1de;
+  --color-error-200: #e4c3bd;
+  --color-error-300: #cfa19a;
+  --color-error-400: #b27f77;
+  --color-error-500: #8f5f58;
+  --color-error-600: #734b45;
+  --color-error-700: #583a35;
+  --color-error-800: #3e2926;
+  --color-error-900: #241817;
+
+  /* ==========================================================
+     SURFACE TOKENS
+     ========================================================== */
+  --surface-background: var(--color-neutral-1);
+  --surface-secondary: var(--color-neutral-2);
+  --surface-card: var(--color-neutral-3);
+  --surface-elevated: var(--color-neutral-4);
+
+  --color-surface-background: var(--surface-background);
+  --color-surface-secondary: var(--surface-secondary);
+  --color-surface-card: var(--surface-card);
+  --color-surface-elevated: var(--surface-elevated);
+
+  /* ==========================================================
+     BORDER TOKENS
+     ========================================================== */
+  --border-default: var(--color-neutral-5);
+  --border-active: var(--color-neutral-6);
+  --border-strong: var(--color-neutral-8);
+
+  --color-border-default: var(--border-default);
+  --color-border-active: var(--border-active);
+  --color-border-strong: var(--border-strong);
+
+  /* ==========================================================
+     TEXT TOKENS
+     ========================================================== */
+  --text-primary: var(--color-neutral-13);
+  --text-heading: var(--color-neutral-12);
+  --text-body: var(--color-neutral-11);
+  --text-secondary: var(--color-neutral-10);
+  --text-muted: var(--color-neutral-9);
+  --text-disabled: var(--color-neutral-8);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-heading: var(--text-heading);
+  --color-text-body: var(--text-body);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-text-disabled: var(--text-disabled);
+
+  /* ==========================================================
+     BRAND TOKENS
+     ========================================================== */
+  --brand-default: var(--color-primary-400);
+  --brand-hover: var(--color-primary-500);   /* Primary 500 #8E6F52 — button hover */
+  --brand-active: var(--color-primary-500);
+  --text-on-brand: var(--color-neutral-1);
+
+  --color-brand: var(--brand-default);
+  --color-brand-hover: var(--brand-hover);   /* ← updated: Primary 500 #8E6F52 */
+  --color-brand-active: var(--brand-active);
+  --color-brand-on-brand: var(--text-on-brand);
+
+  /* ==========================================================
+     BUTTON TOKENS  (L4 — Components)
+     ========================================================== */
+  --btn-fill:         var(--color-neutral-2);   /* #F6F2EB — default fill        */
+  --btn-fill-selected: var(--color-neutral-3);  /* #EFE7DC — selected fill       */
+  --btn-fill-hover:   var(--color-primary-500); /* #8E6F52 — hover fill ← L6 fix */
+  --btn-text:         var(--color-neutral-12);  /* #2F2924 — button text         */
+  --btn-border:       var(--color-neutral-5);   /* #D8C9B4 — inactive border     */
+  --btn-border-active: var(--color-neutral-6);  /* #C6B49D — active border       */
+
+  --color-btn-fill:          var(--btn-fill);
+  --color-btn-fill-selected: var(--btn-fill-selected);
+  --color-btn-fill-hover:    var(--btn-fill-hover);
+  --color-btn-text:          var(--btn-text);
+  --color-btn-border:        var(--btn-border);
+  --color-btn-border-active: var(--btn-border-active);
+
+  /* ==========================================================
+     STATE TOKENS
+     ========================================================== */
+
+  /* SUCCESS */
+  --state-success-bg: var(--color-success-100);
+  --state-success-border: var(--color-success-400);
+  --state-success-text: var(--color-success-800);
+
+  --color-success-bg: var(--state-success-bg);
+  --color-success-border: var(--state-success-border);
+  --color-success-text: var(--state-success-text);
+
+  /* WARNING */
+  --state-warning-bg: var(--color-warning-100);
+  --state-warning-border: var(--color-warning-400);
+  --state-warning-text: var(--color-warning-800);
+
+  --color-warning-bg: var(--state-warning-bg);
+  --color-warning-border: var(--state-warning-border);
+  --color-warning-text: var(--state-warning-text);
+
+  /* INFO */
+  --state-info-bg: var(--color-info-100);
+  --state-info-border: var(--color-info-400);
+  --state-info-text: var(--color-info-800);
+
+  --color-info-bg: var(--state-info-bg);
+  --color-info-border: var(--state-info-border);
+  --color-info-text: var(--state-info-text);
+
+  /* ERROR */
+  --state-error-bg: var(--color-error-100);
+  --state-error-border: var(--color-error-400);
+  --state-error-text: var(--color-error-800);
+
+  --color-error-bg: var(--state-error-bg);
+  --color-error-border: var(--state-error-border);
+  --color-error-text: var(--state-error-text);
+
+  /* ==========================================================
+     TYPOGRAPHY — FONT SIZES
+     ========================================================== */
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-md: 1rem;       /* 16px */
+  --text-lg: 1.125rem;   /* 18px */
+  --text-xl: 1.25rem;    /* 20px */
+  --text-2xl: 1.5rem;    /* 24px */
+  --text-3xl: 1.75rem;   /* 28px */
+  --text-4xl: 2rem;      /* 32px */
+  --text-5xl: 2.25rem;   /* 36px */
+  --text-6xl: 2.5rem;    /* 40px */
+  --text-7xl: 3rem;      /* 48px */
+  --text-8xl: 3.5rem;    /* 56px */
+  --text-9xl: 4rem;      /* 64px */
+  --text-10xl: 5rem;     /* 80px */
+  --text-11xl: 5.5rem;   /* 88px */
+  --text-12xl: 6rem;     /* 96px */
+  --text-13xl: 6.5rem;   /* 104px */
+  --text-14xl: 7rem;     /* 112px */
+  --text-15xl: 7.5rem;   /* 120px */
+  --text-16xl: 8rem;     /* 128px */
+  --text-17xl: 8.5rem;   /* 136px */
+  --text-18xl: 9rem;     /* 144px */
+  --text-19xl: 9.5rem;   /* 152px */
+  --text-20xl: 10rem;    /* 160px */
+  --text-21xl: 10.5rem;  /* 168px */
+  --text-22xl: 11rem;    /* 176px */
+  --text-23xl: 11.5rem;  /* 184px */
+  --text-24xl: 12rem;    /* 192px */
+  --text-25xl: 12.5rem;  /* 200px */
+  --text-26xl: 13rem;    /* 208px */
+  --text-27xl: 13.5rem;  /* 216px */
+  --text-28xl: 14rem;    /* 224px */
+  --text-29xl: 14.5rem;  /* 232px */
+  --text-30xl: 15rem;    /* 240px */
+  --text-31xl: 15.5rem;  /* 248px */
+  --text-32xl: 16rem;    /* 256px */
+  --text-33xl: 16.5rem;  /* 264px */
+  --text-34xl: 17rem;    /* 272px */
+  --text-35xl: 17.5rem;  /* 280px */
+  --text-36xl: 18rem;    /* 288px */
+  --text-37xl: 18.5rem;  /* 296px */
+  --text-38xl: 19rem;    /* 304px */
+  --text-39xl: 19.5rem;  /* 312px */
+  --text-40xl: 20rem;    /* 320px */
+  --text-41xl: 20.5rem;  /* 328px */
+  --text-42xl: 21rem;    /* 336px */
+  --text-43xl: 21.5rem;  /* 344px */
+  --text-44xl: 22rem;    /* 352px */
+  --text-45xl: 22.5rem;  /* 360px */
+  --text-46xl: 23rem;    /* 368px */
+  --text-47xl: 23.5rem;  /* 376px */
+  --text-48xl: 24rem;    /* 384px */
+  --text-49xl: 24.5rem;  /* 392px */
+  --text-50xl: 25rem;    /* 400px */
+
+  /* LINE HEIGHTS */
+  --leading-sm: 1.2;
+  --leading-md: 1.5;
+  --leading-lg: 1.7;
+
+  /* ==========================================================
+     SPACING
+     ========================================================== */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  /* ==========================================================
+     RADIUS
+     ========================================================== */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 14px;
+  --radius-pill: 999px;
+
+  /* ==========================================================
+     MOTION
+     ========================================================== */
+  --motion-fast: 180ms;
+  --motion-medium: 280ms;
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --font-family-base: "Gotham", sans-serif;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #fcfbf8;
+    --foreground: #1f1a17;
+  }
+} */
+
+body {
+  background: var(--surface-background);
+  color: var(--text-body);
+  font-family: "Gotham", sans-serif;
+}
+
+/* ==========================================================
+   SCROLLBAR UTILITIES
+   ========================================================== */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--color-neutral-2);
+  border-radius: 999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-primary-400);
+  border-radius: 999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-500);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
